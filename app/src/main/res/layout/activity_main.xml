@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="25dp"
+    android:background="@color/purple_200"
     android:orientation="vertical"
-    android:background="@color/purple_200">
+    android:padding="25dp"
+    tools:context=".MainActivity">
 
     <RelativeLayout
         android:id="@+id/maincontainer"
@@ -39,7 +39,6 @@
                 tools:ignore="HardcodedText" />
 
         </LinearLayout>
-
 
 
         <LinearLayout
@@ -82,7 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="feels like:  __"
-                    tools:ignore="HardcodedText" >
+                    tools:ignore="HardcodedText">
 
                 </TextView>
             </LinearLayout>
@@ -98,17 +97,18 @@
                     android:layout_height="40dp" />
 
                 <LinearLayout
+                    android:id="@+id/sunrise_lay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:id="@+id/sunrise_lay"
                     tools:ignore="UseCompoundDrawables">
+
                     <ImageView
                         android:id="@+id/humidimg"
                         android:layout_width="54dp"
                         android:layout_height="36dp"
-                        android:src="@drawable/humidity_image"
                         android:background="#3CF1EBF1"
+                        android:src="@drawable/humidity_image"
                         tools:ignore="ContentDescription">
 
                     </ImageView>
@@ -118,10 +118,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="#3CF1EBF1"
+                        android:padding="5dp"
                         android:text="Humidity"
                         android:textSize="20dp"
-                        android:padding="5dp"
-                        android:background="#3CF1EBF1"
                         tools:ignore="HardcodedText,SpUsage">
 
                     </TextView>
@@ -129,23 +129,22 @@
                 </LinearLayout>
 
 
-
                 <Space
                     android:layout_width="wrap_content"
                     android:layout_height="20dp" />
 
                 <LinearLayout
+                    android:id="@+id/sunset_lay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/sunset_lay"
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:id="@+id/pressureimg"
                         android:layout_width="54dp"
                         android:layout_height="36dp"
-                        android:src="@drawable/air_pressure_image"
                         android:background="#3CF1EBF1"
+                        android:src="@drawable/air_pressure_image"
                         tools:ignore="ContentDescription">
 
                     </ImageView>
@@ -155,10 +154,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="#3CF1EBF1"
+                        android:padding="5dp"
                         android:text="Pressure"
                         android:textSize="20dp"
-                        android:padding="5dp"
-                        android:background="#3CF1EBF1"
                         tools:ignore="HardcodedText,SpUsage">
 
                     </TextView>
@@ -171,17 +170,17 @@
                     android:layout_height="20dp" />
 
                 <LinearLayout
+                    android:id="@+id/wind_lay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/wind_lay"
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:id="@+id/windimg"
                         android:layout_width="54dp"
                         android:layout_height="36dp"
-                        android:src="@drawable/wind_speed_image"
                         android:background="#3CF1EBF1"
+                        android:src="@drawable/wind_speed_image"
                         tools:ignore="ContentDescription">
 
                     </ImageView>
@@ -191,10 +190,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="#3CF1EBF1"
+                        android:padding="5dp"
                         android:text="Wind"
                         android:textSize="20dp"
-                        android:padding="5dp"
-                        android:background="#3CF1EBF1"
                         tools:ignore="HardcodedText,SpUsage">
 
                     </TextView>
@@ -207,16 +206,16 @@
                     android:layout_height="20dp" />
 
                 <LinearLayout
+                    android:id="@+id/pressure_lay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/pressure_lay"
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="54dp"
                         android:layout_height="36dp"
-                        android:src="@drawable/rain"
                         android:background="#3CF1EBF1"
+                        android:src="@drawable/rain"
                         tools:ignore="ContentDescription">
 
                     </ImageView>
@@ -226,10 +225,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="#3CF1EBF1"
+                        android:padding="5dp"
                         android:text="Precipitation"
                         android:textSize="20dp"
-                        android:padding="5dp"
-                        android:background="#3CF1EBF1"
                         tools:ignore="HardcodedText,SpUsage">
 
                     </TextView>
@@ -243,16 +242,16 @@
                     android:layout_height="20dp" />
 
                 <LinearLayout
+                    android:id="@+id/humid_lay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/humid_lay"
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="54dp"
                         android:layout_height="36dp"
-                        android:src="@drawable/clouds"
                         android:background="#3CF1EBF1"
+                        android:src="@drawable/clouds"
                         tools:ignore="ContentDescription">
 
                     </ImageView>
@@ -262,17 +261,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="#3CF1EBF1"
+                        android:padding="5dp"
                         android:text="cloudcast"
                         android:textSize="20dp"
-                        android:padding="5dp"
-                        android:background="#3CF1EBF1"
                         tools:ignore="HardcodedText,SpUsage">
 
                     </TextView>
 
                 </LinearLayout>
-
-
 
 
             </LinearLayout>

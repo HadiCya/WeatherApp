@@ -14,71 +14,20 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class MyTask extends AsyncTask<Void,Void,String> {
-    public MainActivity MainActivity;
-    public String address = " ";
-    public String updatedat = " ";
-    public String weatherdescript = " ";
-    public String tempmain = " ";
-    public String precip = " ";
-    public String cc = " ";
-    public String fl = " ";
-    public String windSpeed = " ";
-    public String pressure = " ";
-    public String humidity = " ";
-    public String locate = " ";
-    public String[] fnllist = new String[10];
+    public MainActivity mainActivity;
+    public String address, updatedat, weatherdescript, tempmain, precip, cc, fl, windSpeed, pressure, humidity;
 
-//    TextView location;
-//    TextView update;
-//    TextView status ;
-//    TextView temp ;
-//    TextView precipitation;
-//    TextView cloudcast ;
-//    TextView feelslike;
-//    TextView windsp ;
-//    TextView pressuresp;
-//    TextView humiditysp ;
-
-//
-//    location = findViewById(R.id.location);
-//    update = findViewById(R.id.update);
-//    status = findViewById(R.id.status);
-//    temp = findViewById(R.id.temp);
-//    feelslike = findViewById(R.id.feelslike);
-//    precipitation = findViewById(R.id.precipitation);
-//    cloudcast = findViewById(R.id.cloudcast);
-//    windsp = findViewById(R.id.wind);
-//    pressuresp = findViewById(R.id.pressure);
-//    humiditysp = findViewById(R.id.humidity);
 
     String urlStr;
 
-    public MyTask(MainActivity activity_in, String address_in, String updatedat_in, String weatherdescript_in,
-                  String tempmain_in, String precip_in, String cc_in, String fl_in,
-                  String windSpeed_in, String pressure_in, String humidity_in, String locate_in) {
-
-        this.MainActivity = activity_in;
-        this.address = address_in;
-        this.updatedat = updatedat_in;
-        this.weatherdescript = weatherdescript_in;
-        this.tempmain = tempmain_in;
-        this.precip = precip_in;
-        this.cc = cc_in;
-        this.fl = fl_in;
-        this.windSpeed = windSpeed_in;
-        this.pressure = pressure_in;
-        this.humidity = humidity_in;
-        this.locate = locate_in;
-
-
-
-
+    public MyTask(MainActivity mainActivity) {
+        this.mainActivity = mainActivity;
     }
 
     @Override
     protected String doInBackground(Void... params) {
         String jsonStr = "";
-        urlStr = ("https://api.weatherapi.com/v1/current.json?key=0db3e6d81c4f426db8a175734222604&q=48128&aqi=no");
+        urlStr = ("https://api.weatherapi.com/v1/current.json?key=0db3e6d81c4f426db8a175734222604&q="+ mainActivity.locate +"&aqi=no");
         URL myUrl = null;
         try {
             myUrl = new URL(urlStr);
@@ -296,22 +245,16 @@ public class MyTask extends AsyncTask<Void,Void,String> {
         Log.d("ME", "********* " + humidity);
         Log.d("ME", "********* " + precip);
 
-        this.fnllist = new String[]{address, updatedat, weatherdescript, tempmain, fl, cc, windSpeed, pressure, humidity, precip};
-
-
-//        location.setText(address);
-//        update.setText(updatedat);
-//        status.setText(weatherdescript);
-//        temp.setText(tempmain);
-//        feelslike.setText(fl);
-//        precipitation.setText(precip);
-//        cloudcast.setText(cc);
-//        windsp.setText(windSpeed);
-//        pressuresp.setText(pressure);
-//        humiditysp.setText(humidity);
-
-
-
+        mainActivity.location.setText(address);
+        mainActivity.update.setText(updatedat);
+        mainActivity.status.setText(weatherdescript);
+        mainActivity.temp.setText(tempmain);
+        mainActivity.feelslike.setText(fl);
+        mainActivity.precipitation.setText(precip);
+        mainActivity.cloudcast.setText(cc);
+        mainActivity.windsp.setText(windSpeed);
+        mainActivity.pressuresp.setText(pressure);
+        mainActivity.humiditysp.setText(humidity);
 
     }
 
