@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
-    android:orientation="vertical"
+    tools:context=".MainActivity"
     android:padding="25dp"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:background="@drawable/background_blue">
 
     <RelativeLayout
         android:id="@+id/maincontainer"
@@ -94,7 +94,7 @@
 
                 <Space
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp" />
+                    android:layout_height="20dp" />
 
                 <LinearLayout
                     android:id="@+id/sunrise_lay"
@@ -106,7 +106,7 @@
                     <ImageView
                         android:id="@+id/humidimg"
                         android:layout_width="54dp"
-                        android:layout_height="36dp"
+                        android:layout_height="match_parent"
                         android:background="#3CF1EBF1"
                         android:src="@drawable/humidity_image"
                         tools:ignore="ContentDescription">
@@ -120,8 +120,8 @@
                         android:layout_gravity="center"
                         android:background="#3CF1EBF1"
                         android:padding="5dp"
-                        android:text="Humidity"
-                        android:textSize="20dp"
+                        android:text="Humidity                                n  "
+                        android:textSize="15dp"
                         tools:ignore="HardcodedText,SpUsage">
 
                     </TextView>
@@ -131,7 +131,7 @@
 
                 <Space
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="10dp" />
 
                 <LinearLayout
                     android:id="@+id/sunset_lay"
@@ -142,7 +142,7 @@
                     <ImageView
                         android:id="@+id/pressureimg"
                         android:layout_width="54dp"
-                        android:layout_height="36dp"
+                        android:layout_height="match_parent"
                         android:background="#3CF1EBF1"
                         android:src="@drawable/air_pressure_image"
                         tools:ignore="ContentDescription">
@@ -156,8 +156,8 @@
                         android:layout_gravity="center"
                         android:background="#3CF1EBF1"
                         android:padding="5dp"
-                        android:text="Pressure"
-                        android:textSize="20dp"
+                        android:text="Pressure                              n"
+                        android:textSize="15dp"
                         tools:ignore="HardcodedText,SpUsage">
 
                     </TextView>
@@ -167,7 +167,7 @@
 
                 <Space
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="10dp" />
 
                 <LinearLayout
                     android:id="@+id/wind_lay"
@@ -178,7 +178,7 @@
                     <ImageView
                         android:id="@+id/windimg"
                         android:layout_width="54dp"
-                        android:layout_height="36dp"
+                        android:layout_height="match_parent"
                         android:background="#3CF1EBF1"
                         android:src="@drawable/wind_speed_image"
                         tools:ignore="ContentDescription">
@@ -192,8 +192,8 @@
                         android:layout_gravity="center"
                         android:background="#3CF1EBF1"
                         android:padding="5dp"
-                        android:text="Wind"
-                        android:textSize="20dp"
+                        android:text="Wind                                      n"
+                        android:textSize="15dp"
                         tools:ignore="HardcodedText,SpUsage">
 
                     </TextView>
@@ -203,7 +203,7 @@
 
                 <Space
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="10dp" />
 
                 <LinearLayout
                     android:id="@+id/pressure_lay"
@@ -213,7 +213,7 @@
 
                     <ImageView
                         android:layout_width="54dp"
-                        android:layout_height="36dp"
+                        android:layout_height="match_parent"
                         android:background="#3CF1EBF1"
                         android:src="@drawable/rain"
                         tools:ignore="ContentDescription">
@@ -227,8 +227,8 @@
                         android:layout_gravity="center"
                         android:background="#3CF1EBF1"
                         android:padding="5dp"
-                        android:text="Precipitation"
-                        android:textSize="20dp"
+                        android:text="Precipitation                          n"
+                        android:textSize="15dp"
                         tools:ignore="HardcodedText,SpUsage">
 
                     </TextView>
@@ -239,7 +239,7 @@
 
                 <Space
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="10dp" />
 
                 <LinearLayout
                     android:id="@+id/humid_lay"
@@ -249,7 +249,7 @@
 
                     <ImageView
                         android:layout_width="54dp"
-                        android:layout_height="36dp"
+                        android:layout_height="match_parent"
                         android:background="#3CF1EBF1"
                         android:src="@drawable/clouds"
                         tools:ignore="ContentDescription">
@@ -263,13 +263,33 @@
                         android:layout_gravity="center"
                         android:background="#3CF1EBF1"
                         android:padding="5dp"
-                        android:text="cloudcast"
-                        android:textSize="20dp"
+                        android:text="cloudcast                             n"
+                        android:textSize="15dp"
                         tools:ignore="HardcodedText,SpUsage">
 
                     </TextView>
 
                 </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/frame_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </FrameLayout>
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottom_navigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:menu="@menu/bot_nav_menu" />
 
 
             </LinearLayout>
@@ -277,33 +297,7 @@
 
         </LinearLayout>
 
-        <!--        <LinearLayout-->
-        <!--            android:id="@+id/detailscontainer"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_alignParentBottom="true"-->
-        <!--            android:orientation="vertical">-->
 
-        <!--            <LinearLayout-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:orientation="horizontal"-->
-        <!--                android:weightSum="3">-->
-
-        <!--                <LinearLayout-->
-        <!--                    android:layout_width="0dp"-->
-        <!--                    android:layout_height="wrap_content"-->
-        <!--                    android:layout_weight="1"-->
-        <!--                    android:background="3CF1EBf1"-->
-        <!--                    android:gravity="center"-->
-        <!--                    android:orientation="vertical"-->
-        <!--                    android:padding="8dp">-->
-
-        <!--                </LinearLayout>-->
-
-
-        <!--            </LinearLayout>-->
-        <!--        </LinearLayout>-->
 
 
     </RelativeLayout>
@@ -311,43 +305,3 @@
 </RelativeLayout>
 
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/sky"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Clear Sky"-->
-    <!--        android:textSize="15sp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
-    <!--        app:layout_constraintRight_toRightOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        app:layout_constraintVertical_bias="0.338" />-->
-
-
-
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/mintemp"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Min Temp:   "-->
-    <!--        android:textSize="15sp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.26"-->
-    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
-    <!--        app:layout_constraintRight_toRightOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        app:layout_constraintVertical_bias="0.631" />-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/maxtemp"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Max Temp:   "-->
-    <!--        android:textSize="15sp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.723"-->
-    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
-    <!--        app:layout_constraintRight_toRightOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        app:layout_constraintVertical_bias="0.631" />-->

@@ -1,7 +1,26 @@
 package com.example.finalproject;
 
+import android.Manifest;
+import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.AsyncTask;
+import android.os.Looper;
 import android.util.Log;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,6 +31,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
+import java.util.Locale;
 
 public class MyTask extends AsyncTask<Void,Void,String> {
     public MainActivity mainActivity;
@@ -26,6 +47,13 @@ public class MyTask extends AsyncTask<Void,Void,String> {
 
     @Override
     protected String doInBackground(Void... params) {
+
+
+        while(mainActivity.locate == null){
+
+        }
+
+
         String jsonStr = "";
         urlStr = ("https://api.weatherapi.com/v1/current.json?key=0db3e6d81c4f426db8a175734222604&q="+ mainActivity.locate +"&aqi=no");
         URL myUrl = null;

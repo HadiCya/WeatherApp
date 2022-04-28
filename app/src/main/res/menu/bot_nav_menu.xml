@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Location"
+        android:icon="@drawable/ic_baseline_add_location_24"
+        android:id="@+id/locate"/>
+
+    <item android:title="Weather"
+        android:icon="@drawable/ic_baseline_cloud_circle_24"
+        android:id="@+id/weather"/>
+
+    <item android:title="Alarm"
+        android:icon="@drawable/ic_baseline_alarm_add_24"
+        android:id="@+id/alarm"/>
+
+</menu>
